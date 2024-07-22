@@ -49,7 +49,7 @@ model_type = models.mmdet.retinanet
 backbone = model_type.backbones.resnet50_fpn_1x
 
 train_tramform = tfms.A.Adapter([*tfms.A.aug_tfms(size=224,presize=512),tfms.A.Normalize()])
-valid_tramform = tfms.A.Adapter([*tfms.A.resize_and_pad(224),tfms.A.Normalize])
+valid_tramform = tfms.A.Adapter([*tfms.A.resize_and_pad(224),tfms.A.Normalize()])
 
 
 train_set = Dataset(train_record,train_tramform)
